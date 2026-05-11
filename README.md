@@ -1,4 +1,4 @@
-ELORA AI - WhatsApp Customer Service Platform
+VELORA AI - WhatsApp Customer Service Platform
 
 A complete landing page for VELORA AI featuring animated phone demos, customer testimonials, video demonstrations, and live WhatsApp API integration.
 
