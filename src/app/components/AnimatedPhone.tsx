@@ -1,5 +1,5 @@
-import { motion, useMotionValue, animate } from "motion/react";
-import { useEffect, useState } from "react";
+import { motion, useMotionValue, animate, useScroll, useTransform } from "motion/react";
+import { useEffect, useState, useRef } from "react";
 import { MessageCircle, Check } from "lucide-react";
 
 /* =========================================================
@@ -10,44 +10,43 @@ const chatMessages = [
   {
     id: 1,
     type: "user",
-    message: "Hi, what are your business hours?",
+    message: "Hi, I'd like to book an appointment.",
     time: "10:23 AM",
   },
   {
     id: 2,
     type: "bot",
     message:
-      "Hello! We're open Monday-Friday 9AM-6PM, and Saturday 10AM-4PM.",
+      "Absolutely — what day works best for you?",
     time: "10:23 AM",
   },
   {
     id: 3,
     type: "user",
-    message: "Do you offer international shipping?",
+    message: "Do you operate after hours?",
     time: "10:24 AM",
   },
   {
     id: 4,
     type: "bot",
     message:
-      "Yes! We ship to over 50 countries worldwide.",
+      "Yes — Velora AI is available 24/7.",
     time: "10:24 AM",
   },
   {
     id: 5,
     type: "user",
-    message: "What’s your return policy?",
+    message: "Can customers book instantly?",
     time: "10:25 AM",
   },
   {
     id: 6,
     type: "bot",
     message:
-      "We offer a 30-day return policy on all items.",
+      "Instant bookings are fully automated.",
     time: "10:25 AM",
   },
 ];
-
 /* =========================================================
    TYPES
 ========================================================= */
@@ -65,12 +64,31 @@ interface FloatingMessage {
 ========================================================= */
 
 export function AnimatedPhone() {
+  const containerRef = useRef<HTMLDivElement>(null);
   const [visibleMessages, setVisibleMessages] = useState([0]);
 
   const [floatingMessages, setFloatingMessages] =
     useState<FloatingMessage[]>([]);
 
   const [showTyping, setShowTyping] = useState(false);
+
+  /* =========================================================
+     SCROLL-BASED 3D TRANSFORMS
+  ========================================================= */
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Scroll-based 3D rotations and transforms
+  const scrollRotateY = useTransform(scrollYProgress, [0, 0.5, 1], [-30, 0, 30]);
+  const scrollRotateX = useTransform(scrollYProgress, [0, 0.5, 1], [-15, 0, 15]);
+  const scrollRotateZ = useTransform(scrollYProgress, [0, 0.5, 1], [-12, 0, 12]);
+  const scrollScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.7, 1, 0.8]);
+  const scrollX = useTransform(scrollYProgress, [0, 0.5, 1], [-50, 0, 50]);
+  const scrollYOffset = useTransform(scrollYProgress, [0, 0.5, 1], [-30, 0, 30]);
+  const scrollPerspective = useTransform(scrollYProgress, [0, 1], ["2000px", "4000px"]);
 
   /* =========================================================
      MOTION VALUES
@@ -224,25 +242,26 @@ export function AnimatedPhone() {
   ========================================================= */
 
   return (
-    <div
-      className="relative flex items-center justify-center min-h-screen overflow-hidden bg-white"
+    <motion.div
+      ref={containerRef}
+      className="relative flex items-center justify-center min-h-screen overflow-hidden bg-[#070B14]"
       style={{
-        perspective: "4000px",
-        transformStyle: "preserve-3d",
+        perspective: scrollPerspective,
+        position: 'relative', // Added position: 'relative' for explicit clarity
+        transformStyle: "preserve-3d" as const,
       }}
     >
       {/* =====================================================
-          WHITE PREMIUM BACKGROUND
+          PURE WHITE PREMIUM BACKGROUND
       ===================================================== */}
 
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#ffffff,#f8fafc,#ffffff)]" />
+     <div className="absolute inset-0 bg-[#000000]" />
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.12),transparent_40%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.08),transparent_50%)]" />
 
       {/* =====================================================
           AMBIENT GLOW
       ===================================================== */}
-
       <motion.div
         animate={{
           scale: [1, 1.3, 1],
@@ -253,7 +272,7 @@ export function AnimatedPhone() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute w-[900px] h-[900px] rounded-full bg-emerald-300/30 blur-[140px]"
+        className="absolute w-[900px] h-[900px] rounded-full bg-[#3B82F6]/5 blur-[140px]"
       />
 
       {/* =====================================================
@@ -270,10 +289,10 @@ export function AnimatedPhone() {
           ease: "linear",
         }}
         className="absolute inset-0"
-      >
-        <div className="absolute top-1/3 -left-20 w-[500px] h-[2px] bg-gradient-to-r from-transparent via-emerald-300/40 to-transparent blur-md" />
+      > 
+        <div className="absolute top-1/3 -left-20 w-[500px] h-[2px] bg-gradient-to-r from-transparent via-[#B8B8B8]/40 to-transparent blur-md" />
 
-        <div className="absolute bottom-1/3 -right-20 w-[500px] h-[2px] bg-gradient-to-r from-transparent via-gray-300/40 to-transparent blur-md" />
+        <div className="absolute bottom-1/3 -right-20 w-[500px] h-[2px] bg-gradient-to-r from-transparent via-[#B8B8B8]/40 to-transparent blur-md" />
       </motion.div>
 
       {/* =====================================================
@@ -326,7 +345,7 @@ export function AnimatedPhone() {
             transformStyle: "preserve-3d",
           }}
         >
-          <div className="bg-white/95 backdrop-blur-xl border border-gray-200 rounded-3xl px-5 py-4 max-w-[240px] shadow-[0_20px_80px_rgba(0,0,0,0.15)]">
+          <div className="bg-white backdrop-blur-xl border border-gray-100 rounded-3xl px-5 py-4 max-w-[240px] shadow-[0_20px_80px_rgba(0,0,0,0.12)]">
             <p className="text-sm text-gray-800 font-medium">
               {floating.message.message}
             </p>
@@ -356,12 +375,13 @@ export function AnimatedPhone() {
           ease: [0.16, 1, 0.3, 1],
         }}
         style={{
-          rotateX,
-          rotateY,
-          rotateZ,
-          scale,
-          y,
-          transformStyle: "preserve-3d",
+          rotateX: useTransform([rotateX, scrollRotateX], (values: number[]) => values[0] + values[1]),
+          rotateY: useTransform([rotateY, scrollRotateY], (values: number[]) => values[0] + values[1]),
+          rotateZ: useTransform([rotateZ, scrollRotateZ], (values: number[]) => values[0] + values[1]),
+          scale: useTransform([scale, scrollScale], (values: number[]) => values[0] * values[1]),
+          y: useTransform([y, scrollYOffset], (values: number[]) => values[0] + values[1]),
+          x: scrollX,
+          transformStyle: "preserve-3d" as const,
         }}
         className="relative"
       >
@@ -385,11 +405,11 @@ export function AnimatedPhone() {
               opacity: [0.3, 0.6, 0.3],
             }}
             transition={{
-              duration: 5,
+              duration: 6,
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute -inset-20 bg-gradient-to-r from-emerald-500/20 via-cyan-500/10 to-emerald-500/20 rounded-full blur-[100px]"
+            className="absolute -inset-20 bg-gradient-to-r from-[#3B82F6]/5 via-[#93C5FD]/5 to-[#1A1A1A]/5 rounded-full blur-[100px]"
           />
 
           {/* PHONE BODY */}
@@ -397,7 +417,7 @@ export function AnimatedPhone() {
           <div className="relative w-[300px] h-[620px] rounded-[48px] bg-gradient-to-b from-gray-900 via-gray-800 to-black border-[14px] border-black overflow-hidden shadow-[0_30px_120px_rgba(0,0,0,0.35)]">
             {/* SCREEN */}
 
-            <div className="absolute inset-0 bg-gradient-to-b from-[#ECE5DD] to-[#DDD5CC]" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#111827] to-[#1E293B]" />
 
             {/* GLASS SWEEP */}
 
@@ -420,7 +440,7 @@ export function AnimatedPhone() {
 
             {/* HEADER */}
 
-            <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 pt-10 pb-4 px-4 z-10 shadow-2xl">
+            <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-[#111111] via-[#1A1A1A] to-[#3B82F6] pt-10 pb-4 px-4 z-10 shadow-2xl">
               <div className="flex items-center gap-3">
                 <motion.div
                   animate={{
@@ -432,7 +452,7 @@ export function AnimatedPhone() {
                     ease: "linear",
                   }}
                   className="w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-xl"
-                >
+                > 
                   <MessageCircle
                     className="text-emerald-600"
                     size={22}
@@ -444,7 +464,7 @@ export function AnimatedPhone() {
                     VELORA AI
                   </div>
 
-                  <div className="text-emerald-100 text-xs flex items-center gap-2">
+                  <div className="text-[#B8B8B8] text-xs flex items-center gap-2">
                     <motion.div
                       animate={{
                         opacity: [1, 0.4, 1],
@@ -456,7 +476,7 @@ export function AnimatedPhone() {
                       className="w-2 h-2 bg-green-300 rounded-full"
                     />
 
-                    Online • Instant response
+                    AI Receptionist Online
                   </div>
                 </div>
               </div>
@@ -464,7 +484,7 @@ export function AnimatedPhone() {
 
             {/* CHAT AREA */}
 
-            <div className="absolute top-[100px] bottom-20 left-0 right-0 px-4 overflow-hidden">
+            <div className="absolute top-[100px] bottom-20 left-0 right-0 px-4 overflow-hidden bg-transparent">
               <div className="flex flex-col gap-3">
                 {visibleMessages.map((index) => {
                   const msg = chatMessages[index];
@@ -503,10 +523,10 @@ export function AnimatedPhone() {
                           scale: 1.03,
                           y: -2,
                         }}
-                        className={`relative max-w-[80%] rounded-3xl px-4 py-3 shadow-xl ${
+                        className={`relative max-w-[80%] rounded-3xl px-4 py-3 shadow-lg ${
                           isBot
-                            ? "bg-white text-gray-800"
-                            : "bg-gradient-to-br from-emerald-500 to-emerald-700 text-white"
+                            ? "bg-white/10 backdrop-blur-xl text-white border border-white/10"
+                            : "bg-gradient-to-br from-[#111111] to-[#1A1A1A] border border-white/10 text-white"
                         }`}
                       >
                         <p className="text-sm leading-relaxed">
@@ -515,9 +535,7 @@ export function AnimatedPhone() {
 
                         <div
                           className={`flex justify-end items-center gap-1 mt-1 text-[10px] ${
-                            isBot
-                              ? "text-gray-500"
-                              : "text-emerald-100"
+                            isBot ? "text-[#9CA3AF]" : "text-[#D1D5DB]"
                           }`}
                         >
                           <span>{msg.time}</span>
@@ -545,7 +563,7 @@ export function AnimatedPhone() {
                     }}
                     className="flex justify-start"
                   >
-                    <div className="bg-white rounded-2xl px-4 py-3 shadow-lg">
+                    <div className="bg-white rounded-2xl px-4 py-3 shadow-md border border-gray-100">
                       <div className="flex gap-1">
                         {[0, 1, 2].map((i) => (
                           <motion.div
@@ -570,8 +588,8 @@ export function AnimatedPhone() {
 
             {/* INPUT */}
 
-            <div className="absolute bottom-0 left-0 right-0 bg-white/80 backdrop-blur-xl border-t border-white/40 p-3 flex items-center gap-2">
-              <div className="flex-1 rounded-full bg-white px-4 py-3 text-sm text-gray-400 shadow-inner">
+            <div className="absolute bottom-0 left-0 right-0 bg-white backdrop-blur-xl border-t border-gray-100 p-3 flex items-center gap-2">
+              <div className="flex-1 rounded-full bg-gray-50 px-4 py-3 text-sm text-gray-400 shadow-inner border border-gray-100">
                 Type a message...
               </div>
 
@@ -593,14 +611,14 @@ export function AnimatedPhone() {
                   duration: 2,
                   repeat: Infinity,
                 }}
-                className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center cursor-pointer"
+                className="w-12 h-12 rounded-full bg-gradient-to-br from-[#111111] to-[#1A1A1A] border border-white/10 flex items-center justify-center cursor-pointer"
               >
                 <MessageCircle
-                  className="text-white"
+                  className="text-[#B8B8B8]"
                   size={20}
                 />
               </motion.div>
-            </div>
+            </div> 
           </div>
 
           {/* SHADOW */}
@@ -618,6 +636,6 @@ export function AnimatedPhone() {
           />
         </motion.div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }

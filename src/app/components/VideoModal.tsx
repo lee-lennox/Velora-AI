@@ -51,8 +51,8 @@ export function VideoModal({ isOpen, onClose }: VideoModalProps) {
                 </h4>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Real-time AI responses on WhatsApp</li>
-                  <li>• Multi-language conversation handling</li>
-                  <li>• Analytics dashboard walkthrough</li>
+                  <li>• 24/7 automated customer support</li>
+                  <li>• Instant response capabilities</li>
                   <li>• Integration setup process</li>
                 </ul>
               </div>

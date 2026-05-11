@@ -40,7 +40,7 @@ WHATSAPP_BUSINESS_ACCOUNT_ID=your_business_account_id_here
 
 ## Step 4: Update API Endpoint in Code
 
-In `src/app/components/WhatsAppDemo.tsx`, update the fetch URL to:
+If you re-implement a WhatsApp demo form, update the fetch URL to:
 
 ```typescript
 const response = await fetch('https://YOUR_PROJECT_REF.supabase.co/functions/v1/whatsapp-api', {
