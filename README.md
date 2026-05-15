@@ -1,115 +1,185 @@
-VELORA AI - WhatsApp Customer Service Platform
+VELORA AI — WhatsApp Customer Service & Booking Automation Platform
 
-A complete landing page for VELORA AI featuring animated phone demos, customer testimonials, video demonstrations, and live WhatsApp API integration.
+A premium cinematic landing page for VELORA AI, built to automate customer support, bookings, and lead generation using intelligent WhatsApp AI conversations.
 
-## ✨ Target Industries
-Tailored for **Salons, Barbers, Lash Techs, and Training Academies**.
+🌐 Live Website:
+www.veloraai.co.za
 
-### 🎨 Visual Design
-- **Animated 3D Rotating Phone** - Continuously rotating smartphone with live WhatsApp chat demo
-- **Smooth Scroll Navigation** - Header and footer links scroll smoothly to sections
-- **Motion Animations** - Entry animations throughout the page using Framer Motion
-- **Responsive Design** - Works perfectly on mobile, tablet, and desktop
+✨ Overview
 
-### 📱 Sections
-1. **Hero Section** - Large headline with VELORA AI phone and floating feature badges
-2. **Stats Dashboard** - 4 key metrics with icons (50K+ chats, 99.9% uptime, etc.)
-3. **Features Grid** - 6 feature cards explaining benefits
-4. **Analytics Preview** - Dark-themed dashboard mockup with charts
-5. **Pricing Tables** - 3 pricing tiers in South African Rands (ZAR)
-6. **Customer Testimonials** - Targeted reviews from salon owners and beauty professionals
-7. **Footer** - Complete footer with navigation, contact info, and social links
+VELORA AI is a modern AI-powered business platform designed for service-based businesses that want to automate customer communication while maintaining a premium client experience.
 
-### 🎥 Interactive Elements
-- **Video Demo Modal** - Popup modal when clicking "Watch Demo" button
-- **Smooth Scroll** - All navigation links scroll smoothly to sections
+The project combines:
 
-### 💰 Pricing (ZAR)
+Cinematic UI/UX
+3D animations
+WhatsApp AI automation
+Smooth motion design
+Interactive phone demos
+Premium luxury aesthetics
+🎯 Target Industries
 
-#### Starter: R2499 setup + R1500/month
-*Perfect if you just want to stop missing messages and respond instantly.*
-- WhatsApp AI assistant (basic setup)
-- Answers FAQs (prices, services, location, hours)
-- Basic booking link sharing (redirects to existing system)
-- Business hours automation
-- Up to 50–100 conversations/month
+VELORA AI is built for:
 
-#### Standard: R3400 setup + R23000/month
-- Everything in Starter PLUS:
-- Smart booking flow (guides client to book step-by-step)
-- Lead qualification (asks questions before booking)
-- Follow-ups (if client doesn’t book)
-- After-hours conversion (pushes bookings overnight)
-- Priority responses (faster & smarter AI)
-- Unlimited or higher conversation limit
-- Custom tone (trained to sound like the business owner)
-- Monthly optimization (you improve responses)
+Salons
+Barbershops
+Lash Technicians
+Training Academies
+Clinics
+Beauty Studios
+Service Businesses
+🎨 Design System
+Primary Colors
+Color	Hex
+Deep Black	#050505
+Charcoal	#111214
+Graphite	#1A1B1F
+Silver	#C7C9CE
+Soft White	#F5F7FA
+Electric Blue	#4DA3FF
+Neon Cyan	#6EE7FF
+🚀 Features
+📱 3D Animated Phone
+Cinematic rotating smartphone
+Floating WhatsApp messages
+Scroll-based 3D movement
+Glass reflections and glow effects
+🤖 AI WhatsApp Automation
+Instant replies
+FAQ automation
+Smart booking assistance
+Lead qualification
+Follow-up messaging
+🎬 Cinematic Motion Design
+Framer Motion animations
+Ambient glow effects
+Glassmorphism UI
+Smooth transitions
+Floating smoke effects
+📊 Business Sections
+Hero Section
+Features Grid
+Testimonials
+Pricing Tables
+Contact Section
+Floating WhatsApp Button
+💰 Pricing
+Starter Plan
+R2499 Setup + R1500/month
 
-## 🚀 What's Working Now
-✅ Complete responsive landing page  
-✅ Animated rotating phone with WhatsApp chat messages  
-✅ Video demo modal  
-✅ Customer testimonials section  
-✅ Smooth navigation throughout  
+Perfect for businesses wanting instant replies and basic automation.
 
+Includes:
+WhatsApp AI assistant
+FAQ automation
+Booking redirects
+Business hours automation
+50–100 conversations/month
+Does NOT Include:
+Advanced booking logic
+Follow-ups
+Deep personalization
+Standard Plan
+R3400 Setup + R23000/month
 
-## 🔧 To Enable WhatsApp API Integration
+Advanced AI automation for scaling businesses.
 
-The WhatsApp live demo section is ready but needs Supabase + WhatsApp API credentials.
-
-### Quick Setup:
-1. **Connect to Supabase** via Supabase dashboard settings
-2. **Get WhatsApp Business API credentials** from Meta for Developers
-3. **Add environment variables** to Supabase Edge Functions
-4. **Deploy the edge function**
-
-👉 **See detailed instructions in `WHATSAPP_SETUP.md`**
-
-## 📂 Project Structure
-
-```
+Includes:
+Smart booking flows
+Lead qualification
+Follow-up automation
+Overnight conversions
+Priority AI responses
+Unlimited conversations
+Personalized AI tone
+Monthly optimization
+🛠️ Tech Stack
+React 18
+TypeScript
+Vite
+Tailwind CSS v4
+Framer Motion
+Three.js
+React Three Fiber
+Lucide React
+📂 Project Structure
 src/
 ├── app/
-│   ├── App.tsx                      # Main application
 │   ├── components/
-│   │   ├── Header.tsx               # Navigation header
-│   │   ├── Footer.tsx               # Footer with links
-│   │   ├── VeloraAIHero.tsx         # Hero section
-│   │   ├── AnimatedPhone.tsx        # 3D rotating phone with chat
-│   │   ├── PricingSection.tsx       # Pricing tiers
-│   │   ├── Testimonials.tsx         # Customer reviews
-│   │   ├── WhatsAppDemo.tsx         # Interactive demo form
-│   │   ├── LiveDemoSection.tsx      # Chat sequence animation
-│   │   └── VideoModal.tsx           # Demo video popup
-│   └── App.tsx                      # Main application
-└── supabase/
-    └── functions/
-        └── whatsapp-api/
-            └── index.ts             # WhatsApp API edge function
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   ├── VeloraAIHero.tsx
+│   │   ├── AnimatedPhone.tsx
+│   │   ├── PricingSection.tsx
+│   │   ├── Testimonials.tsx
+│   │   ├── Features.tsx
+│   │   ├── VideoModal.tsx
+│   │   ├── LiveDemoSection.tsx
+│   │   └── WhatsAppDemo.tsx
+│   │
+│   └── App.tsx
+│
+├── styles/
+│   └── globals.css
+│
+└── public/
+⚡ Installation
+Install Dependencies
+npm install
+Start Development Server
+npm run dev
+Build for Production
+npm run build
+🌍 Deployment
 
-```
+Recommended platforms:
 
-## 🎯 Next Steps
+Netlify
+Vercel
+Render
+🔗 WhatsApp Integration
 
-1. **Test the page** - All sections should be visible and animated
-2. **Connect Supabase** - To enable WhatsApp integration
-3. **Get WhatsApp API credentials** - From Meta Business
-4. **Deploy edge function** - To handle live demos
-5. **Replace video URL** - Update the YouTube embed in VideoModal.tsx with your actual demo video
+VELORA AI is prepared for:
 
-## 🔒 Security Notes
+WhatsApp Business API
+Meta Developers Platform
+Supabase Edge Functions
 
-- WhatsApp API tokens should only be stored in Supabase environment variables
-- Never commit API keys to code
-- Phone numbers are validated before sending
-- CORS is configured for secure API access
+Future integrations:
 
-## 📞 Support
+Calendly
+Google Calendar
+CRM Systems
+Stripe Payments
+🎬 Experience Goals
 
-For questions about:
-- **WhatsApp API**: See `WHATSAPP_SETUP.md`
-- **Supabase**: Check Supabase documentation
+The website was designed to feel:
 
----
+Premium
+Futuristic
+Cinematic
+Smooth
+Intelligent
+Interactive
+Luxury-focused
+📞 Contact
 
-**Built with**: React 18, Tailwind CSS v4, Motion (Framer Motion), Lucide Icons, Supabase Edge Functions
+🌐 Website:
+VELORA AI Official Website
+
+🧠 Future Improvements
+
+Planned features:
+
+Real WhatsApp AI conversations
+Voice AI integration
+CRM dashboards
+Multi-language support
+AI memory systems
+Admin analytics
+AI voice assistants
+🏆 Final Vision
+
+VELORA AI is more than a landing page.
+
+It is a cinematic AI business experience designed to showcase the future of automated customer
