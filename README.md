@@ -1,108 +1,138 @@
-VELORA AI — WhatsApp Customer Service & Booking Automation Platform
+# VELORA AI — WhatsApp Customer Service & Booking Automation Platform
 
-A premium cinematic landing page for VELORA AI, built to automate customer support, bookings, and lead generation using intelligent WhatsApp AI conversations.
+🌐 Live Website:  
+[VELORA AI Official Website](https://www.veloraai.co.za?utm_source=chatgpt.com)
 
-🌐 Live Website:
-www.veloraai.co.za
+---
 
-✨ Overview
+## 🚀 Overview
 
-VELORA AI is a modern AI-powered business platform designed for service-based businesses that want to automate customer communication while maintaining a premium client experience.
+**VELORA AI** is a premium cinematic AI-powered platform that automates customer service, bookings, and lead generation through intelligent WhatsApp conversations.
 
-The project combines:
+It is designed for service-based businesses that want to deliver instant responses, improve conversions, and maintain a luxury customer experience through automation.
 
-Cinematic UI/UX
-3D animations
-WhatsApp AI automation
-Smooth motion design
-Interactive phone demos
-Premium luxury aesthetics
-🎯 Target Industries
+The platform combines:
+- Cinematic UI/UX design
+- AI WhatsApp automation
+- 3D interactive visuals
+- Smooth motion design
+- Premium brand storytelling
+
+---
+
+## 🎯 Target Industries
 
 VELORA AI is built for:
 
-Salons
-Barbershops
-Lash Technicians
-Training Academies
-Clinics
-Beauty Studios
-Service Businesses
-🎨 Design System
-Primary Colors
-Color	Hex
-Deep Black	#050505
-Charcoal	#111214
-Graphite	#1A1B1F
-Silver	#C7C9CE
-Soft White	#F5F7FA
-Electric Blue	#4DA3FF
-Neon Cyan	#6EE7FF
-🚀 Features
-📱 3D Animated Phone
-Cinematic rotating smartphone
-Floating WhatsApp messages
-Scroll-based 3D movement
-Glass reflections and glow effects
-🤖 AI WhatsApp Automation
-Instant replies
-FAQ automation
-Smart booking assistance
-Lead qualification
-Follow-up messaging
-🎬 Cinematic Motion Design
-Framer Motion animations
-Ambient glow effects
-Glassmorphism UI
-Smooth transitions
-Floating smoke effects
-📊 Business Sections
-Hero Section
-Features Grid
-Testimonials
-Pricing Tables
-Contact Section
-Floating WhatsApp Button
-💰 Pricing
-Starter Plan
-R2499 Setup + R1500/month
+- Salons  
+- Barbershops  
+- Lash Technicians  
+- Beauty Studios  
+- Training Academies  
+- Clinics  
+- Service-based businesses  
 
-Perfect for businesses wanting instant replies and basic automation.
+---
+
+## 🎨 Design System
+
+### Primary Colors
+
+| Color        | Hex       |
+|--------------|----------|
+| Deep Black   | #050505  |
+| Charcoal     | #111214  |
+| Graphite     | #1A1B1F  |
+| Silver       | #C7C9CE  |
+| Soft White   | #F5F7FA  |
+| Electric Blue| #4DA3FF  |
+| Neon Cyan    | #6EE7FF  |
+
+---
+
+## ✨ Features
+
+### 📱 Cinematic 3D Experience
+- Rotating 3D smartphone animation  
+- Floating WhatsApp chat simulation  
+- Scroll-based motion effects  
+- Glass reflections & glow effects  
+
+### 🤖 AI WhatsApp Automation
+- Instant automated replies  
+- Smart FAQ handling  
+- Booking assistance  
+- Lead qualification  
+- Follow-up messaging  
+
+### 🎬 Cinematic UI System
+- Framer Motion animations  
+- Glassmorphism design  
+- Ambient glow effects  
+- Smooth transitions  
+- Premium visual hierarchy  
+
+---
+
+## 📊 Core Sections
+
+- Hero Section (3D Phone Experience)
+- Features Grid
+- Testimonials
+- Pricing Plans
+- Live Demo Section
+- Contact Section
+- Floating WhatsApp Button
+
+---
+
+## 💰 Pricing
+
+### Starter Plan
+**R2,499 Setup + R1,500/month**
+
+Ideal for small businesses wanting automation.
 
 Includes:
-WhatsApp AI assistant
-FAQ automation
-Booking redirects
-Business hours automation
-50–100 conversations/month
-Does NOT Include:
-Advanced booking logic
-Follow-ups
-Deep personalization
-Standard Plan
-R3400 Setup + R23000/month
+- WhatsApp AI assistant
+- FAQ automation
+- Booking redirects
+- Business hours automation
+- 50–100 conversations/month
 
-Advanced AI automation for scaling businesses.
+---
+
+### Standard Plan
+**R3,400 Setup + R2,300/month**
+
+Advanced automation for scaling businesses.
 
 Includes:
-Smart booking flows
-Lead qualification
-Follow-up automation
-Overnight conversions
-Priority AI responses
-Unlimited conversations
-Personalized AI tone
-Monthly optimization
-🛠️ Tech Stack
-React 18
-TypeScript
-Vite
-Tailwind CSS v4
-Framer Motion
-Three.js
-React Three Fiber
-Lucide React
-📂 Project Structure
+- Smart booking flows
+- Lead qualification system
+- Follow-up automation
+- Unlimited conversations
+- Personalized AI tone
+- Monthly optimization
+
+---
+
+## 🛠️ Tech Stack
+
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS v4
+- Framer Motion
+- Three.js
+- React Three Fiber
+- Lucide React
+
+---
+
+## 📂 Project Structure
+
+```bash
 src/
 ├── app/
 │   ├── components/
@@ -123,63 +153,3 @@ src/
 │   └── globals.css
 │
 └── public/
-⚡ Installation
-Install Dependencies
-npm install
-Start Development Server
-npm run dev
-Build for Production
-npm run build
-🌍 Deployment
-
-Recommended platforms:
-
-Netlify
-Vercel
-Render
-🔗 WhatsApp Integration
-
-VELORA AI is prepared for:
-
-WhatsApp Business API
-Meta Developers Platform
-Supabase Edge Functions
-
-Future integrations:
-
-Calendly
-Google Calendar
-CRM Systems
-Stripe Payments
-🎬 Experience Goals
-
-The website was designed to feel:
-
-Premium
-Futuristic
-Cinematic
-Smooth
-Intelligent
-Interactive
-Luxury-focused
-📞 Contact
-
-🌐 Website:
-VELORA AI Official Website
-
-🧠 Future Improvements
-
-Planned features:
-
-Real WhatsApp AI conversations
-Voice AI integration
-CRM dashboards
-Multi-language support
-AI memory systems
-Admin analytics
-AI voice assistants
-🏆 Final Vision
-
-VELORA AI is more than a landing page.
-
-It is a cinematic AI business experience designed to showcase the future of automated customer
